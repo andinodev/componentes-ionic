@@ -1,0 +1,27 @@
+[
+  {
+    "icon": "alert-circle",
+    "name": "Alerta",
+    "redirectTo": "/alert"
+  },
+  {
+    "icon": "calendar-outline",
+    "name": "DateTime",
+    "redirectTo": "/date-time"
+  },
+  {
+    "icon": "infinite",
+    "name": "Infinite Scroll",
+    "redirectTo": "/infinite-scroll"
+  },
+  {
+    "icon": "newspaper-outline",
+    "name": "Form",
+    "redirectTo": "/form"
+  },
+  {
+    "icon": "game",
+    "name": "Valorant API",
+    "redirectTo": "/valorant"
+  }
+]

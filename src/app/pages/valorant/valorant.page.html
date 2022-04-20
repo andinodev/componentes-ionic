@@ -1,0 +1,117 @@
+<app-header title="VALORANT API"></app-header>
+<ion-content>
+  <div *ngIf="characters">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-lg="6" size="12">
+          <ion-list>
+            <ion-list-header>
+              <ion-label>Personajes</ion-label>
+            </ion-list-header>
+            <ion-item-sliding *ngFor="let char of characters">
+              <ion-item-options side="end">
+                <ion-item-option (click)="add(char)">
+                  <ion-icon slot="start" name="add"></ion-icon>
+                </ion-item-option>
+                <ion-item-option color="danger" (click)="remove(char)">
+                  <ion-icon slot="start" name="trash"></ion-icon>
+                </ion-item-option>
+              </ion-item-options>
+              <ion-item>
+                <ion-label>
+                  <h3>{{char.name}}</h3>
+                </ion-label>
+                <ion-label slot="end" class="ion-text-end text-sm">uwu</ion-label>
+              </ion-item>
+            </ion-item-sliding>
+
+          </ion-list>
+        </ion-col>
+        <ion-col size-lg="6" size="12">
+          <ion-list>
+            <ion-list-header>
+              <ion-label>Mapas</ion-label>
+              <ion-button expand="block" (click)="changeCanReorder()" fill="outline" shape="round">
+                {{(canReorder)?'Modificar':'Cerrar'}}
+              </ion-button>
+            </ion-list-header>
+            <ion-reorder-group [disabled]="canReorder" (ionItemReorder)="onReorder($event)">
+              <ion-item *ngFor="let char of maps">
+                <ion-label>
+                  <h3>{{char.name}}</h3>
+                </ion-label>
+                <ion-reorder slot="end">
+                  <ion-icon name="ellipsis-vertical"></ion-icon>
+                </ion-reorder>
+              </ion-item>
+            </ion-reorder-group>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="!characters">
+    <div class="ion-padding custom-skeleton">
+      <ion-skeleton-text animated style="width: 88%;line-height: 24px;"></ion-skeleton-text>
+    </div>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>
+          <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

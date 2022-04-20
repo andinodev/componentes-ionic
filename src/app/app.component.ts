@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MenuItem } from './interfaces/interfaces';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  menuItem: Observable<MenuItem[]>;
+  constructor(private dataServ: DataService) { }
+
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
+  ngOnInit() {
+    this.menuItem = this.dataServ.getMenu();
+  }
 }

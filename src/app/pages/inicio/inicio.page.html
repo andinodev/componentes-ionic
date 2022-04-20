@@ -1,0 +1,30 @@
+<app-header title="Iniciox" [type]="true"></app-header>
+
+<ion-content>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="inicio" routerLink="/inicio">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Inicio</ion-label>
+        <ion-badge>2000</ion-badge>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="alert" routerLink="/alert">
+        <ion-icon name="alert-circle"></ion-icon>
+        <ion-label>Alerts</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="action-sheet" routerLink="/action-sheet">
+        <ion-icon name="map"></ion-icon>
+        <ion-label>action-sheet</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="about">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-content>

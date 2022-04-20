@@ -1,0 +1,13 @@
+<app-header title="Action Sheet"></app-header>
+
+<ion-content>
+<!-- List of Text Items -->
+<ion-list>
+  <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirectTo" detail>
+    <ion-icon [name]="c.icon" slot="start"></ion-icon>
+    <ion-label>{{c.name}}</ion-label>
+  </ion-item>
+
+</ion-list>
+
+</ion-content>
